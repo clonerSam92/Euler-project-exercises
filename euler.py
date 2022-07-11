@@ -1,3 +1,4 @@
+from calendar import c
 import codecs
 def EulerNum1():
     tot = 0
@@ -117,10 +118,28 @@ def LargestProductInASeries(n, path):
         if x + n - 1  < len(serie):
             temp = 1
             for y in range(0, n):
-                temp += temp * int(str(serie)[x + y])
+                temp = temp * int(str(serie)[x + y])
             if temp > max:
                 max = temp
     print(max)
-    
+
+def SpecialPythagoreanTriplet():
+    a = 1
+    b = 1
+    c = 1
+    for a in range(a+1,1000):
+        for b in range(1, 1000):
+            c = int(pow(a**2 + b**2 , 0.5))
+            #print(a + b + c)
+            if a + b + c == 1000:
+                print(a,b,c)
+                print(a*b*c)
+
+
+    a + b + c = 1000
+    a^2 + b^2 = c^2
+    c = radq(a^2 + b^2)
+   
+
 if __name__ == "__main__":
-    LargestProductInASeries(3, r"C:\Users\Stefano\Documents\Esercizi python\Euler-project-exercises\inputs\Largest product in a series.txt")    
+    SpecialPythagoreanTriplet() 
